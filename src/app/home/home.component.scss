@@ -1,0 +1,41 @@
+.main {
+  height: auto;
+  background-color: rgb(57, 57, 57);
+  box-shadow: 0 0 10px black;
+  position: absolute;
+}
+
+#scorebord {
+  height: auto;
+}
+
+.parent {
+  display: grid;
+}
+
+.cell {
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+#bombImg {
+  width: 8em;
+  height: 2.8em;
+  position: relative;
+  bottom: 30px;
+}
+
+.bgImg {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+
+.content {
+  font-size: 130px;
+}

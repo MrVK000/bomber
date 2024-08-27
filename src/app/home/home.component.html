@@ -1,0 +1,32 @@
+<div style="align-items: center;height: 100vh;" class="container">
+  <img *ngIf="score===totalScore && isGameOverKey==true" class="bgImg" style="position:absolute;opacity: .3;"
+    src="../../assets/party1.gif">
+  <img *ngIf="score===totalScore && isGameOverKey==true" class="bgImg" style="width: 120%;"
+    src="../../assets/party2.gif">
+  <div class=" main p-5 rounded ">
+    <div style="width: 100%;" class="mb-5 container">
+      <div id="scorebord" class="border border-3 rounded p-2 container" style="background-color: white;">
+        <label class="fs-1">Score: {{score}}</label>
+      </div>
+    </div>
+    <div style="background-color: white;" class="p-2 mb-3 rounded container"
+      *ngIf="score===totalScore || isGameOverKey==true">
+      <label class="fs-2 m-2" [ngStyle]="{'color':result!=='You Win:)'?'red':'green'}">{{result}}</label>
+      <button (click)="gameOverFunc()" *ngIf="isGameOverKey==true && result!=='You Win:)'"
+        class="btn btn-warning m-2">New Game</button>
+      <button (click)="nextLevelFunc()" *ngIf="score===totalScore" class="btn btn-success m-2">Next Level</button>
+    </div>
+    <div style="width: 100%;" class="container">
+      <div>
+        <div class="parent" [style]="gridFunc()">
+          <div style="height: 2em;" class="cell text-center fs-2 pt-3 content" (click)="scoreFunc(initialArray[i],i)"
+            [ngStyle]="{'background-color':(bgColorArray[i] === true || (score===totalScore || isGameOverKey==true)) ?( (initialArray[i]==='x' || initialArray[i]===0)?'red':'white' ): 'gray','color':(bgColorArray[i] === true || (score===totalScore || isGameOverKey==true)) ? 'black' : 'gray' }"
+            *ngFor="let element of initialArray;let i=index">
+            <p style="position: relative;bottom: 10px;" *ngIf="!imgFunc(element)">{{element}}</p>
+            <img id="bombImg" class="img-fluid" *ngIf="imgFunc(element)" src="../../assets/final.gif">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
