@@ -46,6 +46,7 @@ export class HomeComponent {
 
 
   scoreFunc(num: any, i: number) {
+
     if (this.isGameOverKey === false) {
       if (num !== 0 && num !== 'x' && this.countArray[i] === false) {
         this.score = this.score + num;
@@ -63,6 +64,10 @@ export class HomeComponent {
       }
       this.bgColorArray[i] = true;
       if (this.score == this.totalScore) {
+        this.initialArray.forEach((element:number,i:number) => {
+          if(this.initialArray[i] == 0)
+          this.initialArray[i] = 'x';
+        });
         this.result = 'You Win:)';
         this.isGameOverKey = true;
       }

@@ -1,8 +1,57 @@
+.outerWrapper {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5em;
+}
+
+.content {
+  z-index: 3;
+}
+
 .main {
   height: auto;
   background-color: rgb(57, 57, 57);
   box-shadow: 0 0 10px black;
-  position: absolute;
+  padding: 40px;
+}
+
+.heading {
+  // color: #fff;
+  font-size: 40px;
+}
+
+.info {
+  color: #818181;
+  font-size: 20px;
+}
+
+.container {
+  overflow: hidden;
+}
+
+.levelBoard {
+  font-size: 24px;
+  color: black;
+}
+
+.scorebord {
+  font-size: 20px;
+  color: #fff;
+}
+
+.levelBoard,
+.scorebord,
+.resultBoard {
+  text-align: center;
+}
+
+.buttonsWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.resultBoard {
+  font-size: x-large;
 }
 
 #scorebord {
@@ -32,10 +81,19 @@
 
 .bgImg {
   height: 100%;
-  width: 100%;
+  width: 100% !important;
   background-size: cover;
+  position: absolute;
 }
 
 .content {
   font-size: 130px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 30px 10px;
+  }
 }
